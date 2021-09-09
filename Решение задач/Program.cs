@@ -1,93 +1,168 @@
 ﻿using System;
 
-namespace Решение_задач_из_учебника
+namespace Bolian
 {
     class Program
     {
+        static void Main(string[] args)
+        {
+            Console.WriteLine("Hello World!");
+        }
+/*НЕ СДЕЛАНЫ
+. Проверить истинность высказывания: «Среди трех данных целых
+чисел есть хотя бы одна пара взаимно противоположных».
+Boolean20◦
+. Дано трехзначное число.Проверить истинность высказывания:
+«Все цифры данного числа различны».
+Boolean21◦
+. Дано трехзначное число.Проверить истинность высказывания:
+«Цифры данного числа образуют возрастающую последовательность».
+Boolean22◦
+. Дано трехзначное число.Проверить истинность высказывания:
+«Цифры данного числа образуют возрастающую или убывающую последовательность»*/
 
-        //Begin1 Дана сторона квадрата a.Найти его периметр P = 4·a.
-        static int Begin1(int value1)
-        {  
-            return value1 * 4;
-        }
 
-        //Begin2◦ Дана сторона квадрата a.Найти его площадь S = a2
-        static int Begin2(int value1)
+        /*Boolean1◦
+        . Дано целое число A.Проверить истинность высказывания: «Число A является положительным».*/
+        static bool Bolian1(int value1)
         {
-            int Square = value1 * value1;
-            return Square;
+            bool result = value1 > 0;
+            return result;
         }
-
-        /*Begin3◦ Даны стороны прямоугольника a и b.Найти его площадь S = a·b и
-         периметр P = 2·(a + b).*/
-        static void Begin3(int value1, int value2)
+        //Дано целое число A. Проверить истинность высказывания: «Число A является нечетным»
+        static bool Bolian2(double value1)
         {
-            int Sqare = value1 * value1;
-            int Perimeter = 2 * (value1 + value2);
-          
+            double valueOdd = value1 % 2;
+            bool result = valueOdd > 0;
+            return result;
         }
-
-        /*Begin4◦ Дан диаметр окружности d.Найти ее длину L = π·d.В качестве
-        значения π использовать 3.14.*/
-        static double Begin4(double value1)
+        //Дано целое число A. Проверить истинность высказывания: «Число A является четным»
+        static bool Bolian3(double value1)
         {
-            double Lenght = value1 * Math.PI;
-            return Lenght;
-        }
-
-        /*Begin5◦ Дана длина ребра куба a.Найти объем куба V = a
-        3 и площадь его поверхности S = 6·a2*/
-        static void Begin5(double value1)
-        {
-            double Volume = Math.Pow(value1,3);
-            double Sqare = 6 * Math.Pow(value1,2);
-            
-        }
-
-        /*Begin6◦ Даны длины ребер a, b, c прямоугольного параллелепипеда.Найти
-        его объем V = a·b·c и площадь поверхности S = 2·(a·b + b·c + a·c).*/
-        static void Begin6(int value1, int value2, int value3)
-        {
-            int Volume = value1 * value2 * value3;
-            int Square = 2 * ((value1 * value2) + (value2 * value3) + (value1 * value3));
-        }
-
-        /*Begin7◦ Найти длину окружности L и площадь круга S заданного радиуса R:
-L = 2·π·R, S = π·R2*/
-        static void Begin7(double value1)
-        {
-            double SolBegin7L = value1 * 2 * Math.PI;
-            double SolBegin7S = Math.PI * value1 * value1;
-           
-        }
-        //Begin8◦Даны два числа a и b.Найти их среднее арифметическое: (a + b)/2.
-        static int Begin8(int value1, int value2)
-        {
-            int SolBegin8 = (value1 + value2) / 2;
-            return SolBegin8;
-        }
-        /*Begin9◦Даны два неотрицательных числа a и b.Найти их среднее геометрическое, то есть квадратный корень из их произведения: 
-        √a·b.*/
-        static double Begin9(double value1, double value2)
-        {
-            double SolBegin9 = System.Math.Sqrt((value1 * value2));
-            return SolBegin9;
+            double valueEven = value1 % 2;
+            bool result = valueEven == 0;
+            return result;
 
         }
-
-        /*Begin10◦Даны два ненулевых числа.Найти сумму, разность, произведение и
-частное их квадратов.*/
-        static void Begin10(double value1, double value2)
+        /*Даны два целых числа: A, B.Проверить истинность высказывания:
+          «Справедливы неравенства A > 2 и B ≤ 3»*/
+        static bool Bolian4(int a , int b)
         {
-            if (value1 == 0 || value2 == 0)
-                Console.WriteLine("Ошибка.Введите другое число");
-            else
-            {
-                double SolBegin101 = Math.Pow(value1, 2) + Math.Pow(value2, 2);
-                double SolBegin102 = Math.Pow(value1, 2) - Math.Pow(value2, 2);
-                double SolBegin103 = Math.Pow(value1, 2) * Math.Pow(value2, 2);
-                double SolBegin104 = Math.Pow(value1, 2) / Math.Pow(value2, 2);
-            }
+            bool result = (a>2 && b<=3);
+            return result;
+
         }
+        /*Даны два целых числа: A, B.Проверить истинность высказывания:
+        «Справедливы неравенства A ≥ 0 или B < −2».*/
+        static bool Bolian5(int a, int b)
+        {
+            bool result = (a >= 0 || b < -2);
+            return result;
+
+        }
+        /*Даны три целых числа: A, B, C.Проверить истинность высказывания: «Справедливо двойное неравенство A<B<C».*/
+        static bool Bolian6(int a, int b, int c)
+        {
+            bool result = (a<b && b<c);
+            return result;
+        }
+        /*Даны три целых числа: A, B, C.Проверить истинность высказывания: «Число B находится между числами A и C». */
+        static bool Bolian7(int a, int b, int c)
+        {
+            bool result = (a < b && b < c);
+            return result;
+        }
+        /*Даны два целых числа: A, B.Проверить истинность высказывания:
+        «Каждое из чисел A и B нечетное».*/
+        static bool Bolian8(double a, double b)
+        {
+            double ValueOddA = a % 2;
+            double ValueOddB = b % 2;
+            bool result =(ValueOddA>0 && ValueOddB>0);
+            return result;
+        }
+        /*Даны два целых числа: A, B.Проверить истинность высказывания:
+        «Хотя бы одно из чисел A и B нечетное»*/
+        static bool Bolian9(double a, double b)
+        {
+            double ValueOddA = a % 2;
+            double ValueOddB = b % 2;
+            bool result = (ValueOddA > 0 || ValueOddB > 0);
+            return result;
+        }
+        /*Даны два целых числа: A, B.Проверить истинность высказывания: «Ровно одно из чисел A и B нечетное».*/
+        static bool Bolian10(double a, double b)
+        {
+            double ValueOddA = a % 2;
+            double ValueOddB = b % 2;
+            bool result = ((ValueOddA > 0 && ValueOddB == 0)&&(ValueOddA == 0 && ValueOddB > 0));
+            return result;
+        }
+        /*Даны два целых числа: A, B.Проверить истинность высказывания: «Числа A и B имеют одинаковую четность»*/
+        static bool Bolian11(double a, double b)
+        {
+            double ValueOddA = a % 2;
+            double ValueOddB = b % 2;
+            bool result = ((ValueOddA == 0 && ValueOddB == 0) && (ValueOddA > 0 && ValueOddB > 0));
+            return result;
+        }
+        /*Даны три целых числа: A, B, C.Проверить истинность высказывания: «Каждое из чисел A, B, C положительное».*/
+        static bool Bolian12(int a, int b, int c)
+        {
+            bool result = ((a>0)&&(b>0)&&(c>0));
+            return result;
+        }
+        /*Даны три целых числа: A, B, C.Проверить истинность высказывания: «Хотя бы одно из чисел A, B, C положительное»*/
+        static bool Bolian13(int a, int b, int c)
+        {
+            bool result = ((a > 0) || (b > 0) || (c > 0));
+            return result;
+        }
+        /*Даны три целых числа: A, B, C.Проверить истинность высказывания: «Ровно одно из чисел A, B, C положительное»*/
+        static bool Bolian14(int a, int b, int c)
+        {
+            bool result = ((a > 0)&&(b <= 0)&&(c <= 0))&&((a <= 0) && (b > 0) && (c <= 0))&&((a <= 0) && (b <= 0) && (c > 0)) ;
+            return result;
+        }
+        /*Даны три целых числа: A, B, C.Проверить истинность высказывания: «Ровно два из чисел A, B, C являются положительными».*/
+        static bool Bolian15(int a, int b, int c)
+        {
+            bool case1 = (a > 0)&&(b > 0)&&(c<0);
+            bool case2 = (c > 0)&&(b > 0)&&(a<0);
+            bool case3 = (b > 0)&&(a > 0)&&(b<0);
+            bool result = (case1 && case2 && case3);
+            return result;
+        }
+        /*Дано целое положительное число.Проверить истинность высказывания: «Данное число является четным двузначным»*/
+        static bool Bolian16(int a)
+        {
+            bool criterion1 = (a>9)&&(a<100);
+            double ValueEven = a % 2;
+            bool criterion2 = ValueEven==0 ;
+
+            bool result = criterion1 && criterion2;
+            return result;
+        }
+        /*Дано целое положительное число.Проверить истинность высказывания: «Данное число является нечетным трехзначным»*/
+        static bool Bolian17(int a)
+        {
+            bool criterion1 = (a > 99) && (a < 1000);
+            double ValueEven = a % 2;
+            bool criterion2 = ValueEven > 0;
+
+            bool result = criterion1 && criterion2;
+            return result;
+        }
+        /*Проверить истинность высказывания: «Среди трех данных целых чисел есть хотя бы одна пара совпадающих»*/
+        static bool Bolian18(int a, int b, int c)
+        {
+            bool case1 = (a == b)&&(a!=c)&&(b!=c) ;
+            bool case2 = (a == c)&&(a != b) && (b != c);
+            bool case3 = (b == c)&&(a != c) && (b != a);
+            bool result = (case1||case2||case3);
+            return result;
+        }
+
+
     }
 }
