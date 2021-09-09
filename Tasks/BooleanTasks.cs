@@ -1,13 +1,7 @@
-﻿using System;
-
-namespace Bolian
+﻿namespace Bolian
 {
-    class Program
+    class BooleanTasks
     {
-        static void Main(string[] args)
-        {
-            Console.WriteLine("Hello World!");
-        }
 /*НЕ СДЕЛАНЫ
 . Проверить истинность высказывания: «Среди трех данных целых
 чисел есть хотя бы одна пара взаимно противоположных».
@@ -162,7 +156,5 @@ Boolean22◦
             bool result = (case1||case2||case3);
             return result;
         }
-
-
     }
 }
