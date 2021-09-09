@@ -6,7 +6,6 @@ namespace КАЛкулятор
     {
         static void Main(string[] args)
         {
-            /*
             int i = 1;
             double operant1 = 0;
             double operant2 = 0;
@@ -82,7 +81,7 @@ namespace КАЛкулятор
                 }
                 Console.WriteLine(answer);
             }
-            */
+            
             Console.ReadKey();
         }
     }

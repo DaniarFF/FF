@@ -1,38 +1,38 @@
 {
   "version": 3,
   "targets": {
-    "net5.0": {}
+    ".NETCoreApp,Version=v3.1": {}
   },
   "libraries": {},
   "projectFileDependencyGroups": {
-    "net5.0": []
+    ".NETCoreApp,Version=v3.1": []
   },
   "packageFolders": {
-    "C:\\Users\\dania\\.nuget\\packages\\": {}
+    "C:\\Users\\yaporyvaev\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\dania\\source\\repos\\КАЛкулятор\\КАЛкулятор\\КАЛкулятор.csproj",
+      "projectUniqueName": "D:\\Projects\\FF\\FF\\КАЛкулятор\\КАЛкулятор.csproj",
       "projectName": "КАЛкулятор",
-      "projectPath": "C:\\Users\\dania\\source\\repos\\КАЛкулятор\\КАЛкулятор\\КАЛкулятор.csproj",
-      "packagesPath": "C:\\Users\\dania\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\dania\\source\\repos\\КАЛкулятор\\КАЛкулятор\\obj\\",
+      "projectPath": "D:\\Projects\\FF\\FF\\КАЛкулятор\\КАЛкулятор.csproj",
+      "packagesPath": "C:\\Users\\yaporyvaev\\.nuget\\packages\\",
+      "outputPath": "D:\\Projects\\FF\\FF\\КАЛкулятор\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\dania\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        "C:\\Users\\yaporyvaev\\AppData\\Roaming\\NuGet\\NuGet.Config"
       ],
       "originalTargetFrameworks": [
-        "net5.0"
+        "netcoreapp3.1"
       ],
       "sources": {
-        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-        "https://api.nuget.org/v3/index.json": {}
+        "https://api.nuget.org/v3/index.json": {},
+        "https://artifactory.akbars.tech/artifactory/api/nuget/nuget": {},
+        "https://artifactory.akbars.tech/artifactory/api/nuget/nuget-artifactory-old": {},
+        "https://artifactory.akbars.tech/artifactory/api/nuget/v3/nuget": {}
       },
       "frameworks": {
-        "net5.0": {
-          "targetAlias": "net5.0",
+        "netcoreapp3.1": {
           "projectReferences": {}
         }
       },
@@ -43,8 +43,7 @@
       }
     },
     "frameworks": {
-      "net5.0": {
-        "targetAlias": "net5.0",
+      "netcoreapp3.1": {
         "imports": [
           "net461",
           "net462",
@@ -60,7 +59,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.400\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.412\\RuntimeIdentifierGraph.json"
       }
     }
   }
