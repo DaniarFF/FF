@@ -1,6 +1,6 @@
 ﻿namespace Bolian
 {
-    class BooleanTasks
+    public class BooleanTasks
     {
 /*НЕ СДЕЛАНЫ
 . Проверить истинность высказывания: «Среди трех данных целых
@@ -113,13 +113,13 @@ Boolean22◦
             return result;
         }
         /*Даны три целых числа: A, B, C.Проверить истинность высказывания: «Ровно одно из чисел A, B, C положительное»*/
-        static bool Bolian14(int a, int b, int c)
+        public static bool Bolian14(int a, int b, int c)
         {
             bool result = ((a > 0)&&(b <= 0)&&(c <= 0))&&((a <= 0) && (b > 0) && (c <= 0))&&((a <= 0) && (b <= 0) && (c > 0)) ;
             return result;
         }
         /*Даны три целых числа: A, B, C.Проверить истинность высказывания: «Ровно два из чисел A, B, C являются положительными».*/
-        static bool Bolian15(int a, int b, int c)
+        public static bool Bolian15(int a, int b, int c)
         {
             bool case1 = (a > 0)&&(b > 0)&&(c<0);
             bool case2 = (c > 0)&&(b > 0)&&(a<0);
@@ -148,7 +148,7 @@ Boolean22◦
             return result;
         }
         /*Проверить истинность высказывания: «Среди трех данных целых чисел есть хотя бы одна пара совпадающих»*/
-        static bool Bolian18(int a, int b, int c)
+        public static bool Bolian18(int a, int b, int c)
         {
             bool case1 = (a == b)&&(a!=c)&&(b!=c) ;
             bool case2 = (a == c)&&(a != b) && (b != c);
