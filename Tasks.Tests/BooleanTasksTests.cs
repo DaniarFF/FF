@@ -6,6 +6,31 @@ namespace Tasks.Tests
 {
     public class BooleanTasksTests
     {
+        //. Дано целое число A.Проверить истинность высказывания: «Число A является положительным».*/
+        [Test]
+        [TestCase(1)]
+        public void Bolian1_PosiviteVAlue_ReturnsTrue(int a)
+        {
+            BooleanTasks.Bolian1(a).Should().BeTrue();
+            
+        }
+        //. Дано целое число A.Проверить истинность высказывания: «Число A является положительным».*/
+        [Test]
+        [TestCase(-1)]
+        public void Bolian1_NegativeVAlue_ReturnsFalse(int a)
+        {
+            BooleanTasks.Bolian1(a).Should().BeFalse();
+
+        }
+
+        //. Дано целое число A.Проверить истинность высказывания: «Число A является положительным».*/
+        [Test]
+        [TestCase(0)]
+        public void Bolian1_ZeroVAlue_ReturnsFalse(int a)
+        {
+            BooleanTasks.Bolian1(a).Should().BeFalse();
+
+        }
         /*Даны три целых числа: A, B, C.Проверить истинность высказывания: «Ровно одно из чисел A, B, C положительное»*/
         [Test]
         [TestCase(1, 2, 3)]

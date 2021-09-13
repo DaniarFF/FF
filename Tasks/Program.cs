@@ -6,7 +6,7 @@ namespace Tasks
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            Console.WriteLine(Bolian.BooleanTasks.Bolian18(11,6,6));
         }
     }
 }
