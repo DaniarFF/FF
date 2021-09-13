@@ -49,7 +49,7 @@
         }
 
         /*Даны три целых числа: A, B, C.Проверить истинность высказывания: «Число B находится между числами A и C». */
-        static bool Bolian7(int a, int b, int c)
+        public static bool Bolian7(int a, int b, int c)
         {
             bool result = (a < b && b < c);
             return result;
@@ -110,8 +110,8 @@
         public static bool Bolian15(int a, int b, int c)
         {
             bool case1 = (a > 0) && (b > 0) && (c < 0);
-            bool case2 = (c > 0) && (b > 0) && (a < 0);
-            bool case3 = (b > 0) && (a > 0) && (b < 0);
+            bool case2 = (a > 0) && (b < 0) && (c > 0);
+            bool case3 = (a < 0) && (b > 0) && (c > 0);
 
             bool result = (case1 || case2 || case3);
             return result;
@@ -137,7 +137,8 @@
             bool case1 = (a == b) && (a != c) && (b != c);
             bool case2 = (a == c) && (a != b) && (b != c);
             bool case3 = (b == c) && (a != c) && (b != a);
-            bool result = (case1 || case2 || case3);
+            bool case4 = (b == c) && (a == c) && (b == a);
+            bool result = (case1 | case2 | case3|case4);
             return result;
         }
     }

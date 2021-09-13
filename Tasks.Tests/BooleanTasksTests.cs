@@ -78,7 +78,7 @@ namespace Tasks.Tests
         [Test]
         [TestCase(1, 2, -3)]
         [TestCase(10, -20, 30)]
-        [TestCase(-10, 20, 30)]
+        [TestCase(-5, 20, 100)]
         public void Bolian15_EnoughPositives_ReturnsTrue(int a, int b, int c)
         {
             BooleanTasks.Bolian15(a, b, c).Should().BeTrue();
