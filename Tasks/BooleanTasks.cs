@@ -138,8 +138,59 @@
             bool case2 = (a == c) && (a != b) && (b != c);
             bool case3 = (b == c) && (a != c) && (b != a);
             bool case4 = (b == c) && (a == c) && (b == a);
-            bool result = (case1 | case2 | case3|case4);
+            bool result = (case1 | case2 | case3 | case4);
             return result;
         }
+        /*НЕ СДЕЛАНЫ
+. 
+Boolean20◦
+. .
+Boolean21◦
+. 
+Boolean22◦
+. 
+        /*Проверить истинность высказывания: «Среди трех данных целых
+        чисел есть хотя бы одна пара взаимно противоположных»*/
+        public static bool Bolian19(int a, int b, int c)
+        {
+
+            bool case1 = (a == (-1) * b);
+            bool case2 = (b == (-1) * c);
+            bool case3 = (c == (-1) * a);
+            bool result = (case1 || case2 || case3);
+            return result;
+
+        }
+        /*Дано трехзначное число.Проверить истинность высказывания:
+«Все цифры данного числа различны».*/
+        public static bool Bolian20(int a)
+        {
+            bool isNumberThreeDigit = (a > 99) && (a < 999);
+            double aNumbersDifference = a % 111; 
+            bool isNumbersInaDifferent = aNumbersDifference == 0; 
+            return isNumbersInaDifferent && isNumberThreeDigit;
+
+        }
+        /*Дано трехзначное число.Проверить истинность высказывания:
+«Цифры данного числа образуют возрастающую последовательность».*/
+        public static bool Bolian21(int a)
+        {
+            bool isNumberThreeDigit = (a > 99) && (a < 999);
+            bool isNumbersHasUp = ((a / 100) < ((a % 100) / 10) && ((a%100)/10) < ((a % 10)));
+            return isNumbersHasUp && isNumberThreeDigit;
+
+        }
+        /*Дано трехзначное число.Проверить истинность высказывания:
+«Цифры данного числа образуют возрастающую или убывающую последовательность»*/
+        public static bool Bolian22(int a)
+        {
+            bool isNumberThreeDigit = (a > 99) && (a < 999);
+            double aNumbersDifference = a % 111;
+            bool isNumbersHasUpOrDown = ((a / 100) < ((a % 100) / 10) && ((a % 100) / 10) < ((a % 10)))
+            || ((a / 100) > ((a % 100) / 10) && ((a % 100) / 10) < ((a % 10)));
+            return isNumbersHasUpOrDown || isNumberThreeDigit;
+
+        }
+
     }
 }

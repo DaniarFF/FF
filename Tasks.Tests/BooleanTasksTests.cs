@@ -111,5 +111,38 @@ namespace Tasks.Tests
         {
             BooleanTasks.Bolian18(a, b, c).Should().BeTrue();
         }
+
+
+
+        /*Проверить истинность высказывания: «Среди трех данных целых
+        чисел есть хотя бы одна пара взаимно противоположных»*/
+        
+        [Test]
+        [TestCase(1, 2, -3)]
+        [TestCase(10, -20, 30)]
+        [TestCase(-10, 20, 30)]
+        public void Bolian19_NoOpposite_ReturnsFalse(int a, int b, int c)
+        {
+            BooleanTasks.Bolian18(a, b, c).Should().BeFalse();
+        }
+
+        [Test]
+        [TestCase(1, -1, -3)]
+        [TestCase(10, -20, 20)]
+        [TestCase(30, 20, -30)]
+        public void Bolian19_OneOppositePair_ReturnsTrue(int a, int b, int c)
+        {
+            BooleanTasks.Bolian19(a, b, c).Should().BeTrue();
+        }
+
+        [Test]
+        [TestCase(1, 1, 1)]
+        [TestCase(-20, -20, -20)]
+        [TestCase(30, 30, 30)]
+        public void Bolian19_All_SameFalse(int a, int b, int c)
+        {
+            BooleanTasks.Bolian19(a, b, c).Should().BeFalse();
+        }
+
     }
 }
