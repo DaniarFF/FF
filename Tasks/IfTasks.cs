@@ -20,34 +20,24 @@ namespace Tasks
             {
                 return (value1 - 2);
             }
-            if (value1 == 0)
+            else
             {
                 return 10;
             }
-            else // можно ли было считать это условие введенным нулем и убрать if(value1 == 0)?
-                return 10;
+
         }
         /*If9. Даны две переменные вещественного типа: A, B. Перераспределить значения данных переменных так, чтобы в A оказалось меньшее из значений,
 а в B — большее. Вывести новые значения переменных A и B.*/
-        public static string IfTask9(float a, float b)
+        public static void IfTask9(float a, float b)
         {
-            string result = "a= " + a + "и b= " + b;
+            float aResult = a;
+            float bResult = b;
             if (a < b)
             {
-                result = "a= " + b + " и b= " + a;
+                aResult = b;
+                bResult = a;
             }
-            return result;
-            // Ярик не души(
         }
-        public static float[] IfTask9_1(float a, float b)
-        {
-            if (a < b)
-            {
-                return new float[] { b, a };
-            }
-            return new float[] { a, b };
-        }//не работает должным образом :(
-
 
         /*If12◦  Даны три числа. Найти наименьшее из них*/
         public static float IfTask12(float a, float b, float c)
@@ -66,7 +56,7 @@ namespace Tasks
             }
             else
             {
-                return 0;
+                throw new ArgumentOutOfRangeException();
             }
         }
         /*If22◦
@@ -97,102 +87,123 @@ namespace Tasks
             }
             else
             {
-                return 0;
+                throw new ArgumentOutOfRangeException("Ошибка");
             }
         }
+
+
         /*Дано целое число K. Вывести строку-описание оценки, соответствующей числу K (1 — «плохо», 2 — «неудовлетворительно», 3 — «удовлетворительно», 4 — «хорошо», 5 — «отлично»). Если K не лежит в диапазоне 1–5,
 то вывести строку «ошибка».*/
-        public static string STask2(int k)
+        public enum score
         {
-            string score = "";
-            switch (k)   
-            {
-
-                case 1:
-                    score = "Плохо";
-                    break;
-                case 2:
-                    score = "Неудовлетворительно";
-                    break;
-                case 3:
-                    score = "удовлетворительно";
-                    break;
-                case 4:
-                    score = "хорошо";
-                    break;
-                case 5:
-                    score = "отлично";
-                    break;
-                default:
-                    score = "Ошибка";
-                    break;
-            }
-            return score;
+            Плохо = 1,
+            Неудовлетворительно,
+            Удовлетворительно,
+            Хорошо,
+            Отлично
         }
+        public static score STask2(int k) 
+        {
+            if ((k < 1) || (k > 5)) throw new ArgumentOutOfRangeException("Ошибка");
+
+            switch (k)
+            {
+                case 1:
+                    return score.Плохо;
+                case 2:
+                    return score.Неудовлетворительно;
+                case 3:
+                    return score.Удовлетворительно;
+                case 4:
+                    return score.Хорошо;
+                case 5:
+                    return score.Отлично;
+                default:
+                    throw new ArgumentOutOfRangeException("Ошибка");
+            }
+        }
+
         /*Мастям игральных карт присвоены порядковые номера: 1 — пики,
 2 — трефы, 3 — бубны, 4 — червы. Достоинству карт, старших десятки,
 присвоены номера: 11 — валет, 12 — дама, 13 — король, 14 — туз. Даны
 два целых числа: N — достоинство (6 ≤ N ≤ 14) и M — масть карты
 (1 ≤ M ≤ 4). Вывести название соответствующей карты вида «шестерка
 бубен», «дама червей», «туз треф» и т. п.*/
-        public static string STask15(int n, int m)
+        public enum nominal
         {
-            string nominal = "";
-            string suit = "";
+            Шестерка = 6,
+            Семерка,
+            Восьмерка,
+            Девятка,
+            Десятка,
+            Валет,
+            Дама,
+            Король,
+            Туз
+        }
+        public enum suit
+        {
+            пик = 1,
+            треф,
+            бубен,
+            червей
+        }
+        public static (nominal, suit) STask15(int n, int m)
+        {
+            if ((( 6 > n ) || ( n > 14 ))||(m < 1) || ( m > 4 ))
+            throw new ArgumentOutOfRangeException("Ошибка");
+            nominal nominal;
+            suit suit;
             switch (n)
             {
-                case 6:
-                    nominal = "Шестерка";
+                case 6:;
+                    nominal = nominal.Шестерка;
                     break;
                 case 7:
-                    nominal = "Семерка";
+                    nominal = nominal.Семерка;
                     break;
                 case 8:
-                    nominal = "Восьмерка";
+                    nominal = nominal.Восьмерка;
                     break;
                 case 9:
-                    nominal = n.ToString("Девятка");
+                    nominal = nominal.Девятка;
                     break;
                 case 10:
-                    nominal = n.ToString("Десятка");
+                    nominal = nominal.Десятка;
                     break;
                 case 11:
-                    nominal = n.ToString("Валет");
+                    nominal = nominal.Валет;
                     break;
                 case 12:
-                    nominal = n.ToString("Дама");
+                    nominal = nominal.Дама;
                     break;
                 case 13:
-                    nominal = n.ToString("Король");
+                    nominal = nominal.Король;
                     break;
                 case 14:
-                    nominal = n.ToString("Туз");
+                    nominal = nominal.Туз;
                     break;
                 default:
-                    nominal = n.ToString("Неопознанная карта");
-                    break;
+                    throw new ArgumentOutOfRangeException("Ошибка");
             }
             switch (m)
             {
                 case 1:
-                    suit = m.ToString("пик");
+                    suit = suit.пик;
                     break;
                 case 2:
-                    suit = m.ToString("треф");
+                    suit = suit.треф;
                     break;
                 case 3:
-                    suit = m.ToString("бубнов");
+                    suit = suit.бубен;
                     break;
                 case 4:
-                    suit = m.ToString("червей");
+                    suit = suit.червей;
                     break;
                 default:
-                    suit = m.ToString("неопознанной масти");
-                   break;
-
+                    throw new ArgumentOutOfRangeException("Ошибка");
             }
-            return (nominal + " " + suit + ".");
-
+            return (nominal, suit);
         }
     }
 }
