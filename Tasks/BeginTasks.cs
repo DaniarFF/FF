@@ -1,10 +1,9 @@
-﻿using System;
+using System;
 
-namespace Решение_задач_из_учебника
+namespace Tasks
 {
-    class Program
+    public class BeginTasks
     {
-
         //Begin1 Дана сторона квадрата a.Найти его периметр P = 4·a.
         static int Begin1(int value1)
         {  
