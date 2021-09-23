@@ -30,12 +30,13 @@ namespace Tasks
 а в B — большее. Вывести новые значения переменных A и B.*/
         public static void IfTask9(float a, float b)
         {
-            float aResult = a;
-            float bResult = b;
+            float temp = 0;
             if (a < b)
             {
-                aResult = b;
-                bResult = a;
+
+                temp = a;
+                a = b;
+                b = temp;
             }
         }
 
@@ -102,22 +103,22 @@ namespace Tasks
             Хорошо,
             Отлично
         }
-        public static score STask2(int k) 
+        public static string STask2(int k) 
         {
             if ((k < 1) || (k > 5)) throw new ArgumentOutOfRangeException("Ошибка");
 
             switch (k)
             {
                 case 1:
-                    return score.Плохо;
+                    return $"{score.Плохо}";
                 case 2:
-                    return score.Неудовлетворительно;
+                    return $"{score.Неудовлетворительно}";
                 case 3:
-                    return score.Удовлетворительно;
+                    return $"{score.Удовлетворительно}";
                 case 4:
-                    return score.Хорошо;
+                    return $"{score.Хорошо}";
                 case 5:
-                    return score.Отлично;
+                    return $"{score.Отлично}";
                 default:
                     throw new ArgumentOutOfRangeException("Ошибка");
             }
@@ -148,7 +149,7 @@ namespace Tasks
             бубен,
             червей
         }
-        public static (nominal, suit) STask15(int n, int m)
+        public static string  STask15(int n, int m)
         {
             if ((( 6 > n ) || ( n > 14 ))||(m < 1) || ( m > 4 ))
             throw new ArgumentOutOfRangeException("Ошибка");
@@ -203,7 +204,7 @@ namespace Tasks
                 default:
                     throw new ArgumentOutOfRangeException("Ошибка");
             }
-            return (nominal, suit);
+            return $" {nominal} {suit}";
         }
     }
 }
